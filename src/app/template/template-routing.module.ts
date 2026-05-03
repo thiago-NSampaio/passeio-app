@@ -9,11 +9,18 @@ const routes: Routes = [
     children:[
       {
         path: 'categories',
-        loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesModule)
+        loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesModule),
+        pathMatch: 'full'
       },
       {
         path: 'places',
-        loadChildren: () => import('../places/places.module').then(m => m.PlacesModule)
+        loadChildren: () => import('../places/places.module').then(m => m.PlacesModule),
+        pathMatch: 'full'
+      },
+      {
+        path: 'gallery',
+        loadChildren: ()=> import('../gallery/gallery.module').then(m => m.GalleryModule),
+        pathMatch: 'full'
       }
     ]
   }

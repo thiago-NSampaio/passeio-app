@@ -9,17 +9,17 @@
   "places": [
     {
       "name": "Restaurante do zé",
-      "category": "1",
+      "category": "Restaurantes",
       "localization": "Manaus",
-      "urlPhoto": "teste",
+      "urlPhoto": "https://jumalodge.com.br/_2020/wp-content/uploads/2020/08/95663807_4006895579351122_2803628280006049792_n-1.jpg",
       "avaliation": "4",
       "id": "7yYs0DNzjag"
     },
     {
       "name": "Restaurante do zé 3",
-      "category": "1",
+      "category": "Restaurantes",
       "localization": "Manaus",
-      "urlPhoto": "https://restauranteterraemar.com.br/",
+      "urlPhoto": "https://3em3.com/wp-content/uploads/2017/11/3em3_manaus_26.jpg",
       "avaliation": "5",
       "id": "IkzCIX7BgQk"
     }
