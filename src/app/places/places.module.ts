@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { PlacesRoutingModule } from './places-routing.module';
 import { PlaceComponent } from './place/place.component';
@@ -11,7 +12,8 @@ import { PlaceComponent } from './place/place.component';
   ],
   imports: [
     CommonModule,
-    PlacesRoutingModule
+    PlacesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class PlacesModule { }

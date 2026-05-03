@@ -1,9 +1,28 @@
 {
-    "categories":[
-        {
-            "id": "1",
-            "name": "Restaurantes",
-            "description": "Lugares para alimentação"
-        }
-    ]
+  "categories": [
+    {
+      "id": "1",
+      "name": "Restaurantes",
+      "description": "Lugares para alimentação"
+    }
+  ],
+  "places": [
+    {
+      "name": "Restaurante do zé",
+      "category": "1",
+      "localization": "Manaus",
+      "urlPhoto": "teste",
+      "avaliation": "4",
+      "id": "7yYs0DNzjag"
+    },
+    {
+      "name": "Restaurante do zé 3",
+      "category": "1",
+      "localization": "Manaus",
+      "urlPhoto": "https://restauranteterraemar.com.br/",
+      "avaliation": "5",
+      "id": "IkzCIX7BgQk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
