@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Place } from './place';
@@ -7,13 +7,31 @@ import { Place } from './place';
   providedIn: 'root'
 })
 export class PlaceService {
-  constructor(private htpp: HttpClient) {}
+  constructor(private http: HttpClient) {}
+
+  baseUrl:string = 'http://localhost:3000/places';
 
   save(place: Place) : Observable<Place>{
-    return this.htpp.post<Place>('http://localhost:3000/places', place);
+    return this.http.post<Place>(this.baseUrl, place);
   }
   
   getAll(): Observable<Place[]>{
-    return this.htpp.get<Place[]>('http://localhost:3000/places');
+    return this.http.get<Place[]>(this.baseUrl);
   }
+
+  filter(name:string, category: string): Observable<Place[]>{
+    let params = new HttpParams();
+
+    if(name){
+      params = params.set('nome_like',name);
+    }
+
+    if(category){
+      params = params.set('category',category);
+    }
+
+    return this.http.get<Place[]>(this.baseUrl,{
+      params
+    })
+  } 
 }
