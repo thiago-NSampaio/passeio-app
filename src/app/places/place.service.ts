@@ -6,6 +6,7 @@ import { Place } from './place';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PlaceService {
   constructor(private http: HttpClient) {}
 
@@ -26,7 +27,7 @@ export class PlaceService {
       params = params.set('nome_like',name);
     }
 
-    if(category){
+    if(category && category !== '-1'){
       params = params.set('category',category);
     }
 

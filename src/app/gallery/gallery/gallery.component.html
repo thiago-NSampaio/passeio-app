@@ -1,25 +1,27 @@
 <form #frm="ngForm">
   <div class="p-4 bg-white shadow">
-    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-4">
       <input
         type="text"
         class="w-full border border-gray-300 p-2 rounded shadow-sm focus:ring focus:ring-blue-400"
         placeholder="Pesquisar pelo nome do local"
         [(ngModel)]="nameFilter"
       />
+
+      <select
+        class="w-full border border-gray-300 p-2 rounded outline-none shadow-sm focus:ring focus:ring-blue-400"
+        [(ngModel)]="categoryFilter"
+      >
+        <option value="-1" selected>Todas as Categorias</option>
+        <option value="" *ngFor="let category of filterCategories">
+          {{ category.name }}
+        </option>
+      </select>
     </div>
 
-    <select
-      class="w-full border border-gray-300 p-2 rounded outline-none shadow-sm focus:ring focus:ring-blue-400"
-      [(ngModel)]="categoryFilter"
+    <button
+      class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800"
     >
-      <option value="" selected>Todas as Categorias</option>
-      <option value="" *ngFor="let category of filterCategories">
-        {{ category.name }}
-      </option>
-    </select>
-
-    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800">
       Pesquisar
     </button>
   </div>
