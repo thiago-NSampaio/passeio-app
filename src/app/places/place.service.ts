@@ -2,22 +2,23 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Place } from './place';
+import {environment} from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class PlaceService {
+  apiUrl: string = environment.apiUrl + '/places';
+
   constructor(private http: HttpClient) {}
 
-  baseUrl:string = 'http://localhost:3000/places';
-
   save(place: Place) : Observable<Place>{
-    return this.http.post<Place>(this.baseUrl, place);
+    return this.http.post<Place>(this.apiUrl, place);
   }
   
   getAll(): Observable<Place[]>{
-    return this.http.get<Place[]>(this.baseUrl);
+    return this.http.get<Place[]>(this.apiUrl);
   }
 
   filter(name:string, category: string): Observable<Place[]>{
@@ -31,7 +32,7 @@ export class PlaceService {
       params = params.set('category',category);
     }
 
-    return this.http.get<Place[]>(this.baseUrl,{
+    return this.http.get<Place[]>(this.apiUrl,{
       params
     })
   } 
