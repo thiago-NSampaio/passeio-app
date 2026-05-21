@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, map } from 'rxjs';
 import {ILayoutProps} from './layoutProps'
+import { AuthGoogleService } from '../../auth-google.service';
 @Component({
   selector: 'app-layout',
   standalone: false,
@@ -13,7 +14,8 @@ export class LayoutComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute 
+    private activatedRoute: ActivatedRoute,
+    private loginService: AuthGoogleService
   ){}
 
   ngOnInit(): void {
@@ -31,5 +33,9 @@ export class LayoutComponent implements OnInit{
     }
 
     return routeChild?.snapshot.data as ILayoutProps;
+  }
+
+  logout(){
+    this.loginService.logout()
   }
 }
